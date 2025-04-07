@@ -1,69 +1,59 @@
 "use client";
-import React from "react";
-import dynamic from "next/dynamic";
+import React, { useEffect, useState } from "react";
 
-const AnimatedNumbers = dynamic(
-  () => {
-    return import("react-animated-numbers");
-  },
-  { ssr: false }
-);
-
-const achievementsList = [
+const currentWork = [
   {
-    metric: "Projects",
-    value: "100",
-    postfix: "+",
+    title: "MERN Authentication App",
+    description:
+      "JWT-based login/signup system with OTP email verification. Using Vite, Tailwind, and Node.js.",
   },
   {
-    prefix: "~",
-    metric: "Users",
-    value: "100,000",
+    title: "Exploring TailwindCss",
+    description:
+      "Exploring real-time video and chat features for peer-to-peer connections using WebRTC.",
   },
   {
-    metric: "Awards",
-    value: "7",
-  },
-  {
-    metric: "Years",
-    value: "5",
+    title: "Strengthening DSA in Java",
+    description:
+      "Revising core data structures and algorithms via Scaler’s Java DSA course.",
   },
 ];
 
-const AchievementsSection = () => {
+const CurrentlyWorkingOn = () => {
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoaded(true);
+    }, 300); // delay for transition
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <div className="py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
-      <div className="sm:border-[#33353F] sm:border rounded-md py-8 px-16 flex flex-col sm:flex-row items-center justify-between">
-        {achievementsList.map((achievement, index) => {
-          return (
-            <div
-              key={index}
-              className="flex flex-col items-center justify-center mx-4 my-4 sm:my-0"
-            >
-              <h2 className="text-white text-4xl font-bold flex flex-row">
-                {achievement.prefix}
-                <AnimatedNumbers
-                  includeComma
-                  animateToNumber={parseInt(achievement.value)}
-                  locale="en-US"
-                  className="text-white text-4xl font-bold"
-                  configs={(_, index) => {
-                    return {
-                      mass: 1,
-                      friction: 100,
-                      tensions: 140 * (index + 1),
-                    };
-                  }}
-                />
-                {achievement.postfix}
-              </h2>
-              <p className="text-[#ADB7BE] text-base">{achievement.metric}</p>
-            </div>
-          );
-        })}
+    <section className="pt-40 py-12 px-4 xl:px-16 bg-[#121212] text-white">
+      <h2 className="text-3xl font-bold mb-6 text-center">
+        Currently Working On
+      </h2>
+
+      <div
+        className={`grid gap-6 md:grid-cols-2 lg:grid-cols-3 transition-opacity duration-700 ease-in-out ${
+          loaded ? "opacity-100" : "opacity-0"
+        }`}
+      >
+        {currentWork.map((item, index) => (
+          <div
+            key={index}
+            className="border border-[#33353F] rounded-lg p-6 bg-[#1E1E1E] hover:shadow-lg transition-shadow duration-300"
+          >
+            <h3 className="text-xl font-semibold text-purple-400 mb-2">
+              {item.title}
+            </h3>
+            <p className="text-[#ADB7BE] text-sm">{item.description}</p>
+          </div>
+        ))}
       </div>
-    </div>
+    </section>
   );
 };
 
-export default AchievementsSection;
+export default CurrentlyWorkingOn;

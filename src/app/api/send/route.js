@@ -1,28 +1,34 @@
 import { NextResponse } from "next/server";
-import { Resend } from "resend";
+import nodemailer from "nodemailer";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-const fromEmail = process.env.FROM_EMAIL;
-
-export async function POST(req, res) {
+export async function POST(req) {
   const { email, subject, message } = await req.json();
-  console.log(email, subject, message);
+
+  const transporter = nodemailer.createTransport({
+    host: "smtp-relay.brevo.com",
+    port:587, // or use "smtp.mailtrap.io", etc.
+    auth: {
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASS,
+    },
+  });
+
+  const mailOptions = {
+    from: process.env.SMTP_EMAIL,
+    to: [process.env.SMTP_EMAIL, email],
+    subject: subject,
+    html: `
+      <h1>${subject}</h1>
+      <p><strong>Message:</strong> ${message}</p>
+      <p><strong>From:</strong> ${email}</p>
+    `,
+  };
+
   try {
-    const data = await resend.emails.send({
-      from: fromEmail,
-      to: [fromEmail, email],
-      subject: subject,
-      react: (
-        <>
-          <h1>{subject}</h1>
-          <p>Thank you for contacting us!</p>
-          <p>New message submitted:</p>
-          <p>{message}</p>
-        </>
-      ),
-    });
-    return NextResponse.json(data);
+    const info = await transporter.sendMail(mailOptions);
+    return NextResponse.json({ success: true, info });
   } catch (error) {
-    return NextResponse.json({ error });
+    console.error(error);
+    return NextResponse.json({ error: error.message });
   }
 }
