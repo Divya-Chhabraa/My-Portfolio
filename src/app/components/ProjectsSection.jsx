@@ -26,7 +26,8 @@ const projectsData = [
     description: "Real-time video calling and chat app powered by WebRTC and MERN stack.",
     image: "/images/projects/3.png",
     gitUrl: "https://github.com/Divya-Chhabraa/CC-Pages",
-    videoPath: "/videos/CamConnect.mp4",
+    previewUrl: "/",
+    videoPath: "/videos/CamConnect.mp4", // ✅ Correct path
   },
 ];
 

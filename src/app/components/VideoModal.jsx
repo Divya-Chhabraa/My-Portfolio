@@ -1,14 +1,33 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const VideoModal = ({ show, onClose, videoPath }) => {
+  
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [onClose]);
+
   if (!show) return null;
 
+  const handleOutsideClick = (e) => {
+    if (e.target.id === "video-overlay") {
+      onClose();
+    }
+  };
+
   return (
-    <div className="fixed inset-0 z-50 bg-black bg-opacity-70 flex items-center justify-center">
-      <div className="bg-white rounded-2xl p-4 max-w-3xl w-full relative">
+    <div
+      id="video-overlay"
+      onClick={handleOutsideClick}
+      className="fixed inset-0 z-50 bg-black bg-opacity-80 flex items-center justify-center"
+    >
+      <div className="relative bg-white p-2 rounded-lg w-full max-w-3xl">
         <button
           onClick={onClose}
-          className="absolute top-2 right-4 text-3xl text-gray-600 hover:text-black"
+          className="absolute top-2 right-4 text-3xl font-bold text-black hover:text-red-600"
         >
           &times;
         </button>
@@ -16,6 +35,7 @@ const VideoModal = ({ show, onClose, videoPath }) => {
           src={videoPath}
           controls
           autoPlay
+          muted
           className="w-full h-auto rounded-xl"
         />
       </div>

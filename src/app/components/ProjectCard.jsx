@@ -54,12 +54,13 @@ const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl, videoPath
 
       {/* Show modal only for CamConnect */}
       {isCamConnect && (
-        <VideoModal
-          show={showVideo}
-          onClose={() => setShowVideo(false)}
-          videoPath={videoPath}
-        />
-      )}
+  <VideoModal
+    show={showVideo}
+    onClose={() => setShowVideo(false)}
+    videoPath={"/videos/CamConnect.mp4"} // ✅ path should be this
+  />
+)}
+
     </>
   );
 };
