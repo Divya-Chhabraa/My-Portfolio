@@ -9,7 +9,7 @@ const projectsData = [
     title: "Next.js Portfolio Website",
     description: "Responsive developer portfolio built with Next.js and Tailwind CSS.",
     image: "/images/projects/1.png",
-    gitUrl: "/",
+    gitUrl: "https://github.com/Divya-Chhabraa/My-Portfolio",
     previewUrl: "/",
   },
   {
