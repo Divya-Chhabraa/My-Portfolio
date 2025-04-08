@@ -6,6 +6,6 @@ export default function handler(req, res) {
   const fileBuffer = fs.readFileSync(filePath);
 
   res.setHeader("Content-Type", "application/pdf");
-  res.setHeader("Content-Disposition", "attachment; filename=DivyaChhabra.pdf");
+  res.setHeader("Content-Disposition", "inline; filename=DivyaChhabra.pdf");
   res.send(fileBuffer);
 }
