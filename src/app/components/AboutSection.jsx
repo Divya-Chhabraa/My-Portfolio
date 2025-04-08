@@ -48,7 +48,7 @@ const TAB_DATA = [
           },
           {
             title: "Secondary Education",
-            place: "Manav Public School, Amritsar, Punjab | 2018 - 2020",
+            place: "Manav Public School, Amritsar, Punjab | 2019 - 2020",
             year: "Score : 93%",
           },
         ].map((edu, index) => (
