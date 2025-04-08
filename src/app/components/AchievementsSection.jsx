@@ -30,7 +30,7 @@ const CurrentlyWorkingOn = () => {
   }, []);
 
   return (
-    <section className="pt-20 py-8 px-4 xl:px-16 bg-[#121212] text-white">
+    <section className="pt-30 py-8 px-4 xl:px-16 bg-[#121212] text-white">
       <h2 className="text-3xl font-bold mb-12 text-center">
         Currently Working On
       </h2>
