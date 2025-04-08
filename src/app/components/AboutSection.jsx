@@ -5,7 +5,7 @@ import TabButton from "./TabButton";
 
 const TAB_DATA = [
   {
-    title: "Skills",
+    title: "Technical Skills",
     id: "skills",
     content: (
       <div className="flex flex-wrap gap-4">
@@ -93,6 +93,28 @@ const TAB_DATA = [
       </div>
     ),
   },
+  {
+    title: "Soft Skills",
+    id: "softskills",
+    content: (
+      <div className="flex flex-wrap gap-4">
+        {[
+          "Communication",
+          "Teamwork",
+          "Problem-Solving",
+          "Time Management",
+          "Leadership",
+        ].map((skill) => (
+          <div
+            key={skill}
+            className="px-4 py-2 text-white rounded-md shadow-md bg-gradient-to-r from-purple-600 to-pink-600 hover:from-pink-600 hover:to-purple-600 transition duration-300"
+          >
+            {skill}
+          </div>
+        ))}
+      </div>
+    ),
+  },
 ];
 
 const AboutSection = () => {
@@ -136,6 +158,12 @@ const AboutSection = () => {
   >
     Certifications
   </TabButton>
+  <TabButton
+  selectTab={() => handleTabChange("softskills")}
+  active={tab === "softskills"}
+>
+  Soft Skills
+</TabButton>
 </div>
 
           </div>
