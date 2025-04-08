@@ -26,8 +26,8 @@ const Navbar = () => {
   return (
     <nav className="fixed mx-auto border border-[#33353F] top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-100">
       <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
-        {/* Logo + Email + Location */}
-        <div className="flex flex-col md:flex-row md:items-center space-y-1 md:space-y-0 md:space-x-4">
+        {/* Logo + Icons (always inline) */}
+        <div className="flex items-center space-x-2 md:space-x-4">
           <Link
             href={"/"}
             className="text-2xl md:text-5xl text-white font-semibold"
@@ -35,53 +35,45 @@ const Navbar = () => {
             DC
           </Link>
 
-          <div className="hidden md:block h-8 w-px bg-gradient-to-b from-purple-500 via-pink-500 to-indigo-500 opacity-60"></div>
+          {/* Email Icon */}
+          <a
+            href="mailto:divyachhabra458@gmail.com"
+            className="text-white text-lg p-1.5 rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 hover:scale-105 transition-transform duration-300"
+          >
+            📧
+          </a>
 
-          {/* Email & Location */}
-          <div className="flex flex-col md:flex-row md:items-center md:space-x-4 mt-1 md:mt-0">
-            {/* Desktop View */}
-            <div className="hidden md:flex md:items-center md:space-x-4">
-              {/* Email */}
-              <a
-                href="mailto:divyachhabra458@gmail.com"
-                className="text-xs md:text-sm text-white border border-transparent bg-gradient-to-r  from-pink-500 via-purple-500 to-indigo-500 p-[1px] rounded-full hover:scale-105 transition-transform duration-300"
-              >
-                <span className="block bg-[#121212] rounded-xl px-3 py-1 hover:bg-opacity-80">
-                  📧 divyachhabra458@gmail.com
-                </span>
-              </a>
-
-              <div className="h-8 w-px bg-gradient-to-b from-purple-500 via-pink-500 to-indigo-500 opacity-60"></div>
-
-              {/* Location */}
-              <span className="text-xs md:text-sm text-white border border-transparent bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 p-[1px] rounded-full hover:scale-105 transition-transform duration-300">
-                <span className="block bg-[#121212] rounded-xl px-3 py-1 hover:bg-opacity-80">
-                  📍 India
-                </span>
-              </span>
-            </div>
-
-            {/* Mobile View - Icons Only */}
-            <div className="flex md:hidden space-x-2">
-              {/* Email Icon */}
-              <a
-                href="mailto:divyachhabra458@gmail.com"
-                className="text-white text-xl p-2 rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 hover:scale-110 transition-transform duration-300"
-              >
-                📧
-              </a>
-
-              {/* Location Icon with Tooltip */}
-              <div className="relative group">
-                <span className="text-white text-xl p-2 rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 hover:scale-110 transition-transform duration-300">
-                  📍
-                </span>
-                <div className="absolute left-1/2 transform -translate-x-1/2 top-full mt-1 bg-black text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
-                  Amritsar, Punjab
-                </div>
-              </div>
+          {/* Location Icon with Tooltip */}
+          <div className="relative group">
+            <span className="text-white text-lg p-1.5 rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 hover:scale-105 transition-transform duration-300">
+              📍
+            </span>
+            <div className="absolute left-1/2 transform -translate-x-1/2 top-full mt-1 bg-black text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+              Amritsar, Punjab
             </div>
           </div>
+        </div>
+
+        {/* Desktop Email & Location */}
+        <div className="hidden md:flex md:items-center md:space-x-4">
+          <div className="h-8 w-px bg-gradient-to-b from-purple-500 via-pink-500 to-indigo-500 opacity-60"></div>
+
+          <a
+            href="mailto:divyachhabra458@gmail.com"
+            className="text-sm text-white border border-transparent bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 p-[1px] rounded-full hover:scale-105 transition-transform duration-300"
+          >
+            <span className="block bg-[#121212] rounded-xl px-3 py-1 hover:bg-opacity-80">
+              📧 divyachhabra458@gmail.com
+            </span>
+          </a>
+
+          <div className="h-8 w-px bg-gradient-to-b from-purple-500 via-pink-500 to-indigo-500 opacity-60"></div>
+
+          <span className="text-sm text-white border border-transparent bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 p-[1px] rounded-full hover:scale-105 transition-transform duration-300">
+            <span className="block bg-[#121212] rounded-xl px-3 py-1 hover:bg-opacity-80">
+              📍 India
+            </span>
+          </span>
         </div>
 
         {/* Mobile Menu Button */}
