@@ -38,18 +38,18 @@ const TAB_DATA = [
         {[
           {
             title: "B.Tech Computer Science and Engineering",
-            place: "Amritsar Group of Colleges, IKGPTU, Punjab",
-            year: "2022 - Present",
+            place: "Amritsar Group of Colleges, IKGPTU, Punjab | 2022 - Present",
+            year: "SGPA : 8.86",
           },
           {
             title: "Senior Secondary Education",
-            place: "Manav Public School, Amritsar, Punjab",
-            year: "2020 - 2022",
+            place: "Manav Public School, Amritsar, Punjab | 2021 - 2022",
+            year: "Score : 90%",
           },
           {
             title: "Secondary Education",
-            place: "Manav Public School, Amritsar, Punjab",
-            year: "2018 - 2020",
+            place: "Manav Public School, Amritsar, Punjab | 2018 - 2020",
+            year: "Score : 93%",
           },
         ].map((edu, index) => (
           <div key={index} className="relative">
