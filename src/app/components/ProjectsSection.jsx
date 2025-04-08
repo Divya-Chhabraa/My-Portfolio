@@ -25,7 +25,7 @@ const projectsData = [
     title: "CamConnect App",
     description: "Real-time video calling and chat app powered by WebRTC and MERN stack.",
     image: "/images/projects/3.png",
-    gitUrl: "/",
+    gitUrl: "https://github.com/Divya-Chhabraa/CC-Pages",
     previewUrl: "/",
   },
 ];
