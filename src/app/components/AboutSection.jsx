@@ -80,6 +80,12 @@ const TAB_DATA = [
             name: "NPTEL: Software Engineering",
           },
           {
+            name: "NPTEL: Introduction to Machine Learning",
+          },
+          {
+            name: "NPTEL: Cloud Computing",
+          },
+          {
             name: "Udemy: MERN Stack Web Development (2024)",
           },
         ].map((cert) => (

@@ -5,6 +5,14 @@ import { motion, useInView } from "framer-motion";
 
 const projectsData = [
   {
+    id: 4,
+    title: "3D Solar System",
+    description: "3D Solar System project built using Three.js",
+    image: "/images/projects/4.png",
+    gitUrl: "https://github.com/Divya-Chhabraa/solar-system",
+    previewUrl: "https://solar-system-divya-chhabraas.vercel.app/",
+  },
+  {
     id: 1,
     title: "Next.js Portfolio Website",
     description: "Responsive developer portfolio built with Next.js and Tailwind CSS.",
