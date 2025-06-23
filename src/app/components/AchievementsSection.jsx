@@ -3,20 +3,21 @@ import React, { useEffect, useState } from "react";
 
 const currentWork = [
   {
-    title: "MERN Authentication App",
-    description:
-      "JWT-based login/signup system with OTP email verification. Using Vite, Tailwind, and Node.js.",
-  },
-  {
-    title: "Exploring TailwindCss",
-    description:
-      "Exploring real-time video and chat features for peer-to-peer connections using WebRTC.",
-  },
-  {
-    title: "Strengthening DSA in Java",
-    description:
-      "Revising core data structures and algorithms via Scaler’s Java DSA course.",
-  },
+  title: "WordPress & Elementor",
+  description:
+    "Learning to build custom, responsive websites and manage content with ease using WordPress and Elementor.",
+},
+{
+  title: "Next.js with TypeScript",
+  description:
+    "Exploring full-stack development using Next.js and TypeScript, focusing on server-side rendering and type safety.",
+},
+{
+  title: "Mastering TypeScript",
+  description:
+    "Enhancing JavaScript projects with strong typing, interfaces, and advanced TypeScript features for scalable codebases.",
+}
+
 ];
 
 const CurrentlyWorkingOn = () => {

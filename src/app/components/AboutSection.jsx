@@ -19,6 +19,8 @@ const TAB_DATA = [
           "MySQL",
           "Postman",
           "Git & GitHub",
+          "TypeScript",
+          "WordPress (Elementor)",
         ].map((skill) => (
           <div
             key={skill}

@@ -1,9 +1,17 @@
-"use client";
+"use client"
 import React, { useRef } from "react";
 import ProjectCard from "./ProjectCard";
 import { motion, useInView } from "framer-motion";
 
 const projectsData = [
+  {
+    id: 5,
+    title: "Blossom Studio",
+    description: "Built a responsive website for Blossom Studio using WordPress and Elementor.",
+    image: "/images/projects/5.png",
+    gitUrl: "https://divyachhabra.free.nf/",
+    previewUrl: "https://divyachhabra.free.nf/home/",
+  },
   {
     id: 4,
     title: "3D Solar System",
